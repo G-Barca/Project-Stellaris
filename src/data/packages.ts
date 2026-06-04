@@ -36,10 +36,10 @@ export const packages: Package[] = [
   },
   {
     id: 4,
-    name: "Volta ao Mundo em 120 Minutos",
+    name: "Volta ao Mundo",
     destination: "Órbita Baixa",
     description: "O pacote introdutório ao turismo espacial. Dê uma volta completa ao redor da Terra em apenas 120 minutos.",
-    price: 180000,
+    price: 580000,
     duration: "1 dia",
     availableSeats: 32,
     imageUrl: "https://imgs.search.brave.com/amm9rxEy_3ejrdLHAMUgCJp7Pa_-LF3N0SYlnuc1khE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvODY4/ODcxNDA4L3B0L2Zv/dG8vc3BhY2Utc2h1/dHRsZS1vbi10aGUt/YmFja2dyb3VuZC1v/Zi1yaXNpbmctc3Vu/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1TbnBpX19KSWU3/YWloeEpqcndNcjVC/Z2EwRmMzcGcxbWhL/MGJncWVzVjBzPQ",
@@ -52,8 +52,21 @@ export const packages: Package[] = [
     description: "Para os mais ousados. A primeira expedição comercial ao planeta vermelho. Vagas extremamente limitadas.",
     price: 8500000,
     duration: "14 meses",
-    availableSeats: 1,
+    availableSeats: 6,
     imageUrl: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800",
     highlights: ["Primeiro turista em Marte", "Exploração da superfície", "Pesquisa científica", "Legado histórico garantido"]
+  },
+  {
+    id: 6,
+    name: "Experiência Interestelar",
+    destination: "Europa",
+    description: "A viagem mais ambiciosa de todas. viage para EUROPA, a lua de Júpiter, esta testemunhe a beleza de Jupiter",
+    price: 3000000000,
+    duration: "6 anos",
+    availableSeats: 10,
+    imageUrl: "https://www.bstorytelling.com.br/wp-content/uploads/2014/11/o-INTERSTELLAR-TRAILER-facebook-e1415639451891.jpg",
+    highlights: ["Viagem interestelar", "Visite exoplanetas", "Contato com vida alienígena não inteligente", "Futura casa da humanidade"]
+
+
   }
 ]
