@@ -33,6 +33,9 @@ export default function Navbar() {
           <Link to="/packages" className="bg-white text-gray-950 text-sm px-4 py-2 rounded hover:bg-gray-200 transition-colors tracking-wider">
             Reservar
           </Link>
+          <Link to="/reservations" className="text-gray-400 hover:text-white text-sm tracking-wider transition-colors">
+  Reservas
+</Link>
         </div>
 
         {/* menu hamburguer */}
