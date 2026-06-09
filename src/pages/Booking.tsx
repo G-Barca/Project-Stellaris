@@ -59,16 +59,20 @@ export default function Booking() {
       return
     }
 
-    await bookingService.create({
-      packageId: pkg!.id,
-      passengerName: formData.passengerName,
-      email: formData.email,
-      numberOfPeople: Number(formData.numberOfPeople),
-      travelDate: formData.travelDate
-    })
-
-    setSubmitted(true)
-    setError('')
+    try {
+      await bookingService.create({
+        packageId: pkg!.id,
+        passengerName: formData.passengerName,
+        email: formData.email,
+        numberOfPeople: Number(formData.numberOfPeople),
+        travelDate: formData.travelDate
+      })
+      setSubmitted(true)
+      setError('')
+    } catch (err) {
+      setError('Erro ao confirmar reserva. Tente novamente.')
+      console.error(err)
+    }
   }
 
   if (submitted) {

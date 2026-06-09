@@ -6,6 +6,16 @@ interface PackageCardProps {
 }
 
 export default function PackageCard({ package: pkg }: PackageCardProps) {
+  const fallbackImages: Record<number, string> = {
+  1: "https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=800",
+  2: "https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=800",
+  3: "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800",
+  4: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800",
+  5: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800",
+  6: "https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=800"
+}
+
+const imageUrl = pkg.imageUrl || fallbackImages[pkg.id] || ""
   return (
     <div className="border border-gray-800 hover:border-gray-600 transition-colors group">
       
@@ -13,7 +23,7 @@ export default function PackageCard({ package: pkg }: PackageCardProps) {
 
       <div className="overflow-hidden h-48">
         <img
-          src={pkg.imageUrl}
+          src={imageUrl}
           alt={pkg.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />

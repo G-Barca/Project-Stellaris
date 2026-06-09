@@ -1,6 +1,6 @@
 import type { Booking } from '../types'
 
-const BASE = 'http://localhost:8080'
+const BASE = 'https://stellaris-quarkus-6.onrender.com'
 
 export const bookingService = {
 
