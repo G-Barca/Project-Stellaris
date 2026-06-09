@@ -1,34 +1,37 @@
+import { useEffect, useState } from 'react'
 import { packageService } from '../services/packageService'
-import PackageCard from '../components/PackageCard'
+import  PackageCard  from '../components/PackageCard'
+import type { Package } from '../types'
 
-export default function Packages() {
-  const packages = packageService.getAll()
+export default function PackagePage() {
+  const [packages, setPackages] = useState<Package[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    packageService.getAll()
+      .then(data => setPackages(data))
+      .finally(() => setLoading(false))
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+        <p className="text-gray-400">Carregando pacotes...</p>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-gray-950 px-6 py-20">
-      
-      {/* Header */}
-
-      <div className="max-w-7xl mx-auto mb-16 text-center">
-        <p className="text-gray-500 text-sm tracking-[0.3em] uppercase mb-4">
-          Explore o universo
-        </p>
-        <h1 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Nossos Pacotes
-        </h1>
-        <p className="text-gray-500 text-lg max-w-xl mx-auto">
-          Escolha seu destino e dê o primeiro passo rumo às estrelas.
-        </p>
+      <div className="max-w-6xl mx-auto">
+        <p className="text-gray-500 text-sm tracking-[0.3em] uppercase mb-4">Destinos</p>
+        <h1 className="text-white text-4xl font-bold tracking-tight mb-16">Pacotes disponíveis</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {packages.map(pkg => (
+            <PackageCard key={pkg.id} package={pkg} />
+          ))}
+        </div>
       </div>
-
-      {/* Grid */}
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {packages.map(pkg => (
-          <PackageCard key={pkg.id} package={pkg} />
-        ))}
-      </div>
-
     </div>
   )
 }
