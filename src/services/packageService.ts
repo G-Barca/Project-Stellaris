@@ -1,12 +1,20 @@
 import type { Package } from '../types'
-import { packages } from '../data/packages'
+
+const BASE = 'http://localhost:8080'
 
 export const packageService = {
-  getAll(): Package[] {
-    return packages
+
+  async getAll(): Promise<Package[]> {
+    const response = await fetch(`${BASE}/pacote`)
+    const data = await response.json()
+    return data
   },
 
-  getById(id: number): Package | undefined {
-    return packages.find(pkg => pkg.id === id)
+  async getById(id: number): Promise<Package | undefined> {
+    const response = await fetch(`${BASE}/pacote/${id}`)
+    if (!response.ok) return undefined
+    const data = await response.json()
+    return data
   }
+
 }
