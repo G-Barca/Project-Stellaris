@@ -2,25 +2,25 @@ const team = [
   {
     nome: "Guilherme Barca",
     rm: "RM568517",
-    turma: "1TDSB",
+    turma: "1TDSPB",
     github: "https://github.com/G-Barca",
     linkedin: "https://www.linkedin.com/in/o-guilherme-barca/",
     foto: "/images/guilherme.png"
   },
   {
     nome: "Juliana Marques",
-    rm: "",
-    turma: "1TDSB",
-    github: "",
-    linkedin: "",
+    rm: "RM566795",
+    turma: "1TDPSB",
+    github: "https://github.com/julianasrmarques",
+    linkedin: "https://www.linkedin.com/in/juliana-marques-bbb522329/",
     foto: "/images/juliana.png"
   },
   {
     nome: "Lucas Kosio",
-    rm: "",
-    turma: "1TDSB",
-    github: "",
-    linkedin: "",
+    rm: "RM566828",
+    turma: "1TDSPB",
+    github: "https://github.com/lucasgkosio",
+    linkedin: "https://www.linkedin.com/in/lucas-kosio-85b691411/",
     foto: "/images/lucas.png"
   }
 ]
