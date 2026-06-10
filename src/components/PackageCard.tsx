@@ -7,12 +7,12 @@ interface PackageCardProps {
 
 export default function PackageCard({ package: pkg }: PackageCardProps) {
   const fallbackImages: Record<number, string> = {
-  1: "https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=800",
-  2: "https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?w=800",
-  3: "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?w=800",
-  4: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800",
-  5: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800",
-  6: "https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?w=800"
+  1: "/images/orbita.jpg",
+  2: "/images/lua.jpg",
+  3: "/images/iss.jpeg",
+  4: "/images/voltaomundo.jpg",
+  5: "/images/marte.png",
+  6: "/images/europa.jpeg"
 }
 
 const imageUrl = pkg.imageUrl || fallbackImages[pkg.id] || ""
